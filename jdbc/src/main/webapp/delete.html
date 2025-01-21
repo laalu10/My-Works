@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <title>Delete Record</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f7fa;
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                width: 50%;
+                margin: 100px auto;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                text-align: center;
+                color: #333;
+                font-size: 28px;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            label {
+                font-size: 16px;
+                margin: 10px 0 5px;
+                color: #333;
+            }
+
+            input[type="text"] {
+                padding: 8px;
+                width: 80%;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            input[type="submit"] {
+                width: 80%;
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+
+            h4 {
+                text-align: center;
+                font-size: 20px;
+                color: #666;
+            }
+
+            .error-message {
+                color: red;
+                text-align: center;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Delete Record</h1>
+
+            <!-- The form for deleting record -->
+            <form action="delete.jsp" method="post" onsubmit="return validateForm()">
+                <label for="id">Enter the ID:</label>
+                <input type="text" id="id" name="id" placeholder="Enter ID" />
+
+                <h4>OR</h4>
+
+                <label for="name">Enter the Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter Name" />
+
+                <input type="submit" value="Submit" />
+            </form>
+
+            <!-- Error message will appear here -->
+            <div id="error-message" class="error-message"></div>
+        </div>
+
+        <!-- JavaScript for form validation -->
+        <script>
+            function validateForm() {
+                var id = document.getElementById("id").value;
+                var name = document.getElementById("name").value;
+                var errorMessage = document.getElementById("error-message");
+
+                // Check if both fields are empty
+                if (id.trim() === "" && name.trim() === "") {
+                    errorMessage.innerHTML = "Please provide either an ID or a Name.";
+                    return false;
+                }
+
+                // Clear the error message if validation passes
+                errorMessage.innerHTML = "";
+                return true;
+            }
+        </script>
+    </body>
+</html>
