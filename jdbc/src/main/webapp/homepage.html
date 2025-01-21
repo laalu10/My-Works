@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Home Page</title>
+        <style>
+            /* General body styling */
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f7fc;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                text-align: center;
+            }
+
+            /* Container to center buttons */
+            .container {
+                background-color: #fff;
+                padding: 40px;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            /* Title styling */
+            h1 {
+                font-size: 32px;
+                color: #333;
+                margin-bottom: 30px;
+            }
+
+            /* Button styling */
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 15px 25px;
+                font-size: 18px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin: 10px 0;
+                width: 100%;
+                transition: background-color 0.3s ease;
+            }
+
+            /* Button hover effect */
+            button:hover {
+                background-color: #45a049;
+            }
+
+            /* Button focus effect */
+            button:focus {
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome </h1>
+            <button onclick="window.location.href = 'create.html'">CREATE CONTACT</button>
+            <button onclick="window.location.href = 'read.jsp'">SHOW CONTACT</button>
+            <button onclick="window.location.href = 'update.html'">UPDATE CONTACT</button>
+            <button onclick="window.location.href = 'delete.html'">DELETE CONTACT</button>
+        </div>
+    </body>
+</html>

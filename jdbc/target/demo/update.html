@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>Update Contact</title>
+        <style>
+            /* Reset some basic styles */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Body Styling */
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+                padding: 0;
+                margin: 0;
+            }
+
+            /* Form container styling */
+            .container {
+                width: 50%;
+                margin: 50px auto;
+                background-color: #fff;
+                padding: 30px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+
+            h1 {
+                text-align: center;
+                color: #333;
+            }
+
+            /* Label styling */
+            label {
+                display: block;
+                margin-bottom: 10px;
+                font-size: 1.1em;
+                color: #333;
+            }
+
+            /* Input fields styling */
+            input[type="text"] {
+                width: 100%;
+                padding: 12px;
+                margin: 8px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 1em;
+                box-sizing: border-box;
+            }
+
+            /* Submit button styling */
+            input[type="submit"] {
+                width: 100%;
+                padding: 12px;
+                background-color: #4CAF50;
+                color: white;
+                font-size: 1.1em;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+
+            /* Back button styling */
+            button {
+                display: block;
+                width: 100%;
+                padding: 12px;
+                background-color: #3498db;
+                color: white;
+                font-size: 1.1em;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 20px;
+                transition: background-color 0.3s;
+            }
+
+            button:hover {
+                background-color: #2980b9;
+            }
+
+            /* Footer with button links */
+            .footer {
+                text-align: center;
+                margin-top: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Update Contact</h1>
+            <form action="update.jsp" method="get">
+                <label>Enter the ID:</label>
+                <input type="text" name="id" required>
+
+                <label>Enter the Name:</label>
+                <input type="text" name="name" required>
+
+                <label>Enter the Age:</label>
+                <input type="text" name="age" required>
+
+                <input type="submit" value="Submit">
+            </form>
+
+            <!-- Back to homepage button -->
+            <button onclick="window.location.href = 'homepage.html'">Back To HomePage</button>
+        </div>
+    </body>
+</html>
