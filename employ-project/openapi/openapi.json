@@ -1,0 +1,160 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080",
+            "description": "Generated server url"
+        }
+    ],
+    "paths": {
+        "/api/update/{id}": {
+            "put": {
+                "tags": [
+                    "employ-controller"
+                ],
+                "operationId": "updateEmp",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Employee"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/create": {
+            "post": {
+                "tags": [
+                    "employ-controller"
+                ],
+                "operationId": "createEmp",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Employee"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/show": {
+            "get": {
+                "tags": [
+                    "employ-controller"
+                ],
+                "operationId": "showEmp",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Employee"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "employ-controller"
+                ],
+                "operationId": "deleteEmp",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Employee": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "jobId": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }
+            }
+        }
+    }
+}

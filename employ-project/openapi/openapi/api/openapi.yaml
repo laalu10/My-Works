@@ -1,0 +1,116 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- description: Generated server url
+  url: http://localhost:8080
+paths:
+  /api/update/{id}:
+    put:
+      operationId: updateEmp
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                type: string
+          description: OK
+      tags:
+      - employ-controller
+      x-content-type: application/json
+      x-accepts:
+      - '*/*'
+  /api/create:
+    post:
+      operationId: createEmp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                type: string
+          description: OK
+      tags:
+      - employ-controller
+      x-content-type: application/json
+      x-accepts:
+      - '*/*'
+  /api/show:
+    get:
+      operationId: showEmp
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                items:
+                  $ref: '#/components/schemas/Employee'
+                type: array
+          description: OK
+      tags:
+      - employ-controller
+      x-accepts:
+      - '*/*'
+  /api/delete/{id}:
+    delete:
+      operationId: deleteEmp
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                type: string
+          description: OK
+      tags:
+      - employ-controller
+      x-accepts:
+      - '*/*'
+components:
+  schemas:
+    Employee:
+      example:
+        jobId: 6
+        name: name
+        id: 0
+      properties:
+        id:
+          format: int64
+          type: integer
+        name:
+          type: string
+        jobId:
+          format: int32
+          type: integer
+      type: object
+
